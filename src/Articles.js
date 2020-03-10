@@ -23,7 +23,7 @@ class Articles extends Component {
         }); 
     }
 
-render () {
+    render () {
     let { articles, loaded } = this.state;
 
     return !loaded ? <p>Loading ...</p> : (

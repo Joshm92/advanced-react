@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import api from './api.js';
+import Comments from './Comments.js'
 
 class Article extends Component {
 
@@ -26,11 +26,13 @@ class Article extends Component {
 
     render () {
         let { loaded, article, notFound } = this.state;
+        let { id } = this.props;
 
         return !loaded ? <p>Loading ...</p> : (notFound ? <p>Not Found</p> : (
             <>
                 <h2> {article.title} </h2>
                 <p> {article.article} </p>
+                <Comments Id={ id } />
             </>
             ));
         }
